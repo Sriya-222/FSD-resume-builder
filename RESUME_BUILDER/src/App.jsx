@@ -7,6 +7,7 @@ import ViewResumes from './pages/ViewResumes'
 import ViewResume from './pages/ViewResume'
 import Login from './pages/Login'
 import { authService } from './services/api'
+import AIPage from './pages/AIPage'
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/resumes" element={<ProtectedRoute><ViewResumes /></ProtectedRoute>} />
               <Route path="/resumes/:id" element={<ProtectedRoute><ViewResume /></ProtectedRoute>} />
               <Route path="/resumes/:id/edit" element={<ProtectedRoute><EditResume /></ProtectedRoute>} />
+              <Route path="/ai" element={<ProtectedRoute><AIPage /></ProtectedRoute>} />
             </Routes>
           </Layout>
         }
