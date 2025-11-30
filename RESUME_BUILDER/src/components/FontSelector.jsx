@@ -1,5 +1,5 @@
 import { availableFonts } from '../utils/fontsAndIcons'
-
+/*fonts and icons.js file contains all the fonts from that one is selected*/
 const FontSelector = ({ selectedFont, onSelectFont }) => {
   return (
     <div className="card">

@@ -68,7 +68,7 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
             design={sectionDesign}
             colors={colors}
             icon={<FaGraduationCap className="text-xl" />}
-          >
+          >{/*with this we are rendering the education section with the respective props*/}
             {resumeData.education.map((edu, index) => (
               <div key={index} className="mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">{edu.degree}</h3>
@@ -86,7 +86,7 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
             design={sectionDesign}
             colors={colors}
             icon={<FaBriefcase className="text-xl" />}
-          >
+          >{/*with this we are rendering the experience section with the respective props*/}
             {resumeData.experience.map((exp, index) => (
               <div key={index} className="mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">{exp.title}</h3>
