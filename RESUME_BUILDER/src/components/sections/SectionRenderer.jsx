@@ -6,7 +6,7 @@ const SectionRenderer = ({
   children, 
   design, 
   colors,
-  icon 
+  icon           /*these are used to render a section with these properties*/
 }) => {
   const renderSection = () => {
     switch (design) {
@@ -228,3 +228,4 @@ const SectionRenderer = ({
 
 export default SectionRenderer
 
+/*sections are allotted with different styles*/

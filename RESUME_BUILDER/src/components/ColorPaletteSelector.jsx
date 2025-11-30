@@ -98,3 +98,4 @@ const ColorPaletteSelector = ({ selectedPalette, onSelectPalette }) => {
 
 export default ColorPaletteSelector
 
+/*this component is used to select the color palette for the resume*/

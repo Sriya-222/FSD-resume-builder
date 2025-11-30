@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaHome, FaPlus, FaList, FaFileAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
 import { authService } from '../services/api'
 import { useEffect, useState } from 'react'
+import { FaRobot } from 'react-icons/fa'
 
 const Layout = ({ children }) => {
   const location = useLocation()
@@ -67,6 +68,19 @@ const Layout = ({ children }) => {
                 <FaList className="mr-2" />
                 My Resumes
               </Link>
+              <Link
+  to="/ai"
+  className={`flex items-center px-4 py-2 rounded-lg transition-colors ${
+    isActive('/ai') 
+      ? 'bg-primary-500 text-white' 
+      : 'text-gray-700 hover:bg-gray-100'
+  }`}
+>
+  <FaRobot className="mr-2" />
+  AI
+</Link>
+
+
               {user && (
                 <div className="flex items-center ml-4 pl-4 border-l border-gray-300">
                   <div className="flex items-center mr-4 text-gray-700">
