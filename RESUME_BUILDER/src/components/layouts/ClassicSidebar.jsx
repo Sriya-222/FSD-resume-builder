@@ -3,9 +3,9 @@ import { FaGraduationCap, FaBriefcase, FaCode, FaProjectDiagram } from 'react-ic
 
 const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
   return (
-    <div className="flex min-h-screen bg-white print:min-h-0">
+    <div className="flex min-h-[297mm] bg-white print:min-h-0">
       {/* Left Sidebar */}
-      <div className="w-1/3 text-white p-6 overflow-hidden" style={{ background: `linear-gradient(to bottom, ${colors.primary}, ${colors.secondary})` }}>
+      <div className="w-1/3 text-white p-6" style={{ background: `linear-gradient(to bottom, ${colors.primary}, ${colors.secondary})` }}>
         {/* Photo */}
         {resumeData.personalInfo?.photo && (
           <div className="mb-6">
@@ -18,26 +18,26 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
         )}
         
         {/* Name */}
-        <h1 className="text-2xl font-bold mb-4 text-center">
+        <h1 className="text-2xl font-bold mb-4 text-center break-words">
           {resumeData.personalInfo?.fullName || 'Your Name'}
         </h1>
         
         {/* Contact Info */}
         <div className="space-y-2 text-sm mb-6">
           {resumeData.personalInfo?.email && (
-            <div className="break-all overflow-hidden">{resumeData.personalInfo.email}</div>
+            <div className="break-all">{resumeData.personalInfo.email}</div>
           )}
           {resumeData.personalInfo?.phone && (
-            <div className="break-words overflow-hidden">{resumeData.personalInfo.phone}</div>
+            <div className="break-words">{resumeData.personalInfo.phone}</div>
           )}
           {resumeData.personalInfo?.address && (
-            <div className="break-words overflow-hidden">{resumeData.personalInfo.address}</div>
+            <div className="break-words">{resumeData.personalInfo.address}</div>
           )}
           {resumeData.personalInfo?.linkedin && (
-            <div className="break-all overflow-hidden">{resumeData.personalInfo.linkedin}</div>
+            <div className="break-all">{resumeData.personalInfo.linkedin}</div>
           )}
           {resumeData.personalInfo?.website && (
-            <div className="break-all overflow-hidden">{resumeData.personalInfo.website}</div>
+            <div className="break-all">{resumeData.personalInfo.website}</div>
           )}
         </div>
         
@@ -70,7 +70,7 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
             icon={<FaGraduationCap className="text-xl" />}
           >{/*with this we are rendering the education section with the respective props*/}
             {resumeData.education.map((edu, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{edu.degree}</h3>
                 <p className="font-medium" style={{ color: colors.primary }}>{edu.school}</p>
                 <p className="text-sm text-gray-600">{edu.year} {edu.gpa && `• GPA: ${edu.gpa}`}</p>
@@ -88,7 +88,7 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
             icon={<FaBriefcase className="text-xl" />}
           >{/*with this we are rendering the experience section with the respective props*/}
             {resumeData.experience.map((exp, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{exp.title}</h3>
                 <p className="font-medium" style={{ color: colors.primary }}>{exp.company} {exp.location && `• ${exp.location}`}</p>
                 <p className="text-sm text-gray-600 mb-2">{exp.startDate} - {exp.endDate || 'Present'}</p>
@@ -112,7 +112,7 @@ const ClassicSidebar = ({ resumeData, colors, sectionDesign }) => {
             icon={<FaProjectDiagram className="text-xl" />}
           >
             {resumeData.projects.map((project, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{project.name}</h3>
                 {project.technologies && (
                   <p className="font-medium text-sm mb-1" style={{ color: colors.accent }}>{project.technologies}</p>

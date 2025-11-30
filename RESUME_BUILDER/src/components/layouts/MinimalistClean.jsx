@@ -3,7 +3,7 @@ import { FaGraduationCap, FaBriefcase, FaCode, FaProjectDiagram } from 'react-ic
 
 const MinimalistClean = ({ resumeData, colors, sectionDesign }) => {
   return (
-    <div className="min-h-screen bg-white p-12 max-w-3xl mx-auto print:min-h-0 print:p-8">
+    <div className="min-h-[297mm] bg-white p-12 max-w-3xl mx-auto print:min-h-0 print:p-8">
       {/* Header - No Photo */}
       <div className="text-center mb-12 border-b-2 border-gray-300 pb-8 overflow-hidden">
         <h1 className="text-5xl font-light text-gray-800 mb-4">
@@ -48,7 +48,7 @@ const MinimalistClean = ({ resumeData, colors, sectionDesign }) => {
       {resumeData.education && resumeData.education.length > 0 && (
         <SectionRenderer title="Education" design={sectionDesign} colors={colors} icon={<FaGraduationCap className="text-xl" />}>
           {resumeData.education.map((edu, index) => (
-            <div key={index} className="mb-6">
+            <div key={index} className="mb-6 break-inside-avoid">
               <div className="flex justify-between items-start mb-1">
                 <h3 className="text-lg font-normal text-gray-800">{edu.degree}</h3>
                 {edu.year && <span className="text-sm text-gray-600">{edu.year}</span>}
@@ -64,7 +64,7 @@ const MinimalistClean = ({ resumeData, colors, sectionDesign }) => {
       {resumeData.experience && resumeData.experience.length > 0 && (
         <SectionRenderer title="Experience" design={sectionDesign} colors={colors} icon={<FaBriefcase className="text-xl" />}>
           {resumeData.experience.map((exp, index) => (
-            <div key={index} className="mb-8">
+            <div key={index} className="mb-8 break-inside-avoid">
               <div className="flex justify-between items-start mb-2">
                 <div>
                   <h3 className="text-lg font-normal text-gray-800">{exp.title}</h3>
@@ -89,7 +89,7 @@ const MinimalistClean = ({ resumeData, colors, sectionDesign }) => {
       {resumeData.projects && resumeData.projects.length > 0 && (
         <SectionRenderer title="Projects" design={sectionDesign} colors={colors} icon={<FaProjectDiagram className="text-xl" />}>
           {resumeData.projects.map((project, index) => (
-            <div key={index} className="mb-8">
+            <div key={index} className="mb-8 break-inside-avoid">
               <div className="flex justify-between items-start mb-2">
                 <div>
                   <h3 className="text-lg font-normal text-gray-800">{project.name}</h3>

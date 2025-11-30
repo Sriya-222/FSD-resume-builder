@@ -3,7 +3,7 @@ import { FaGraduationCap, FaBriefcase, FaCode, FaProjectDiagram } from 'react-ic
 
 const ModernHeader = ({ resumeData, colors, sectionDesign }) => {
   return (
-    <div className="min-h-screen bg-white print:min-h-0">
+    <div className="min-h-[297mm] bg-white print:min-h-0">
       {/* Header with Photo */}
       <div className="text-white p-8 text-center overflow-hidden" style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.secondary})` }}>
         {resumeData.personalInfo?.photo && (
@@ -59,7 +59,7 @@ const ModernHeader = ({ resumeData, colors, sectionDesign }) => {
         {resumeData.education && resumeData.education.length > 0 && (
           <SectionRenderer title="Education" design={sectionDesign} colors={colors} icon={<FaGraduationCap className="text-xl" />}>
             {resumeData.education.map((edu, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{edu.degree}</h3>
                 <p className="font-medium" style={{ color: colors.primary }}>{edu.school}</p>
                 <p className="text-sm text-gray-600">{edu.year} {edu.gpa && `• GPA: ${edu.gpa}`}</p>
@@ -72,7 +72,7 @@ const ModernHeader = ({ resumeData, colors, sectionDesign }) => {
         {resumeData.experience && resumeData.experience.length > 0 && (
           <SectionRenderer title="Experience" design={sectionDesign} colors={colors} icon={<FaBriefcase className="text-xl" />}>
             {resumeData.experience.map((exp, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{exp.title}</h3>
                 <p className="font-medium" style={{ color: colors.primary }}>{exp.company} {exp.location && `• ${exp.location}`}</p>
                 <p className="text-sm text-gray-600 mb-2">{exp.startDate} - {exp.endDate || 'Present'}</p>
@@ -91,7 +91,7 @@ const ModernHeader = ({ resumeData, colors, sectionDesign }) => {
         {resumeData.projects && resumeData.projects.length > 0 && (
           <SectionRenderer title="Projects" design={sectionDesign} colors={colors} icon={<FaProjectDiagram className="text-xl" />}>
             {resumeData.projects.map((project, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 break-inside-avoid">
                 <h3 className="text-lg font-semibold text-gray-800">{project.name}</h3>
                 {project.technologies && (
                   <p className="font-medium text-sm mb-1" style={{ color: colors.accent }}>{project.technologies}</p>

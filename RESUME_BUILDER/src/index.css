@@ -88,15 +88,24 @@
   
   /* Resume preview styles */
   .resume-preview-template {
-    @apply min-h-[800px] print:min-h-0 bg-white;
+    @apply min-h-[297mm] bg-white relative;
+    width: 210mm;
     max-width: 100%;
-    overflow-x: hidden;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   /* Ensure contact info fits within margins */
   .resume-preview-template * {
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Prevent page breaks inside items */
+  .break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   /* Print-specific styles for resume */
@@ -107,6 +116,7 @@
       padding: 0 !important;
       box-shadow: none !important;
       border: none !important;
+      min-height: 297mm !important;
     }
     
     .resume-preview-template > * {
